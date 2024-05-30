@@ -29,3 +29,9 @@ services:
     volumes:
       - grafana_data:/var/lib/grafana
     restart: always
+
+  metrics_generator:
+    build: ./metrics-app
+    ports:
+      - "9091:9091"
+    restart: on-failure
